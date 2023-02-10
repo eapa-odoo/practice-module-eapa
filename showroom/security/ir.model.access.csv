@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+showroom.access_showroom_vehicle,access_showroom_vehicle,showroom.model_showroom_vehicle,base.group_user,1,1,1,1
+showroom.access_showroom_vehicle_type,access_showroom_vehicle_type,showroom.model_showroom_vehicle_type,base.group_user,1,1,1,1
+showroom.access_showroom_vehicle_model,access_showroom_vehicle_model,showroom.model_showroom_vehicle_model,base.group_user,1,1,1,1

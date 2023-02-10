@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>    
+
+    <record id="showroom_vehicle_type_action" model="ir.actions.act_window">
+        <field name="name">Vehicle Type</field>
+        <field name="res_model">showroom.vehicle.type</field>
+        <field name="view_mode">tree,form</field>
+         <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create your Vehicle Type
+          </p>
+        </field>
+    </record>
+
+     <record id="showroom_vehicle_type_view_tree" model="ir.ui.view">
+        <field name="name">showroom.vehicle.type.tree</field>
+        <field name="model">showroom.vehicle.type</field>
+        <field name="arch" type="xml">
+            <tree string="Showroom Vehicle Type Tree">
+                <field name="veh_type"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
