@@ -11,7 +11,7 @@
           </p>
         </field>
     </record>
-
+    
      <record id="showroom_vehicle_type_view_tree" model="ir.ui.view">
         <field name="name">showroom.vehicle.type.tree</field>
         <field name="model">showroom.vehicle.type</field>
