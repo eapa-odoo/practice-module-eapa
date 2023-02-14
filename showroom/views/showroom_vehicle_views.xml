@@ -1,27 +1,66 @@
-<?xml version="1.0"?>
+<?xml version='1.0'?>
 <odoo>
-    <record id="showroom_vehicle_action" model="ir.actions.act_window">
-        <field name="name">Vehicle</field>
-        <field name="res_model">showroom.vehicle</field>
-        <field name="view_mode">tree,form</field>
-         <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
+    <record id='showroom_vehicle_action' model='ir.actions.act_window'>
+        <field name='name'>Vehicle</field>
+        <field name='res_model'>showroom.vehicle</field>
+        <field name='view_mode'>tree,form</field>
+         <field name='help' type='html'>
+          <p class='o_view_nocontent_smiling_face'>
             Create your first vehicle
           </p>
         </field>
     </record>
 
-    <record id="showroom_vehicle_view_tree" model="ir.ui.view">
-        <field name="name">showroom.vehicle.tree</field>
-        <field name="model">showroom.vehicle</field>
-        <field name="arch" type="xml">
-            <tree string="Showroom Vehicle Tree">
-                <field name="veh_model_id"/>
-                <field name="veh_type_id"/>
-                <field name="veh_company"/>
-                <field name="veh_description"/>
-                <field name="veh_cost"/>
+    <record id='showroom_vehicle_view_tree' model='ir.ui.view'>
+        <field name='name'>showroom.vehicle.tree</field>
+        <field name='model'>showroom.vehicle</field>
+        <field name='arch' type='xml'>
+            <tree string='showroom vehicle tree'>
+                <field name='veh_company'/>
+                <field name='veh_model_id'/>
+                <field name='veh_type_id'/>
+                <field name='veh_cost'/>
+                <field name='veh_description'/>
             </tree>
+        </field>
+    </record>
+
+    <record id='showroom_vehicle_view_from' model='ir.ui.view'>
+        <field name='name'>showroom.vehicle.form</field>
+        <field name='model'>showroom.vehicle</field>
+        <field name='arch' type='xml'>
+            <form string='showroom vehicle form'>
+                <sheet>
+                    <div>
+                        <label for='veh_company' string='Company'/>
+                        <h1><field name='veh_company' placeholder=''/></h1>
+                        <br/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name='veh_model_id'/>
+                            <field name='veh_type_id' string='Type'/>
+                        </group>
+                        <group>
+                            <field name='veh_cost'/>
+                        </group>
+                        <div><br/></div>
+                        <notebook>
+                            <page string='Model'>
+                                <group>
+                                    <group>
+                                        <field name='veh_model_year' string='Model Year'/>
+                                        <field name='veh_transmission' string='Transmission'/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string='Note'>
+                                <field name='veh_description' nolabel="1" placeholder="Write here any other information related to this vehicle"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 
