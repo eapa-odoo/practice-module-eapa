@@ -16,11 +16,11 @@
         <field name='model'>showroom.vehicle</field>
         <field name='arch' type='xml'>
             <tree string='showroom vehicle tree'>
-                <field name='veh_company'/>
-                <field name='veh_model_id'/>
-                <field name='veh_type_id'/>
-                <field name='veh_cost'/>
-                <field name='veh_description'/>
+                <field name='company_id'/>
+                <field name='model_id'/>
+                <field name='category_id'/>
+                <field name='tag_ids'/>
+                <field name='cost'/>
             </tree>
         </field>
     </record>
@@ -31,46 +31,47 @@
         <field name='arch' type='xml'>
             <form string='showroom vehicle form'>
                 <sheet>
-                    <field name='veh_image' class='oe_avatar' widget='image'/>
-                    <div class='oe_title'>
-                        <label for="veh_company"/>
+                    <field name='image' class='oe_avatar' widget='image'/>
+                    <div class='oe_title' style='margin-left:15px'>
+                        <label for='company_id'/>
                         <h1>
-                            <field name="veh_company" placeholder="e.g. BMW"/>
+                            <field name='company_id' placeholder='e.g. BMW'/>
                         </h1>
+                        <br/>
                     </div>
-
                     <group>
                         <group>
-                            <field name='veh_model_id'/>
-                            <field name='veh_type_id' string='Type'/>
+                            <field name='model_id'/>
+                            <field name='category_id' string='Category'/>
                         </group>
                         <group>
-                            <field name='veh_cost'/>
+                            <field name='cost'/>
+                            <field name='tag_ids' widget='many2many_tags' placeholder='tags'/>
                         </group>
                         <div><br/></div>
                         <notebook>
                             <page string='Model'>
                                 <group>
                                     <group string='model'>
-                                        <field name='veh_model_year' widget='char' string='Model Year'/>
-                                        <field name='veh_transmission' string='Transmission'/>
+                                        <field name='model_year' widget='char' string='Model Year'/>
+                                        <field name='transmission' string='Transmission'/>
                                     </group>
                                     <group string='engine'>
-                                        <field name='veh_horsepower' string='Horsepower'/>
-                                        <label for='veh_power'/>
+                                        <field name='horsepower' string='Horsepower'/>
+                                        <label for='power'/>
                                         <div class='o_row'>
-                                            <field name='veh_power' string='Power'/><span>kW</span>
+                                            <field name='power' string='Power'/><span>kW</span>
                                         </div>
-                                        <field name='veh_fuel_type' string='Fuel Type'/>
-                                        <label for='veh_emissions'/>
+                                        <field name='fuel_type' string='Fuel Type'/>
+                                        <label for='emissions'/>
                                         <div class='o_row'>
-                                            <field name='veh_emissions' string='CO2 Emissions'/><span>g/km</span>
+                                            <field name='emissions' string='CO2 Emissions'/><span>g/km</span>
                                         </div>
                                     </group>
                                 </group>
                             </page>
                             <page string='Note'>
-                                <field name='veh_description' nolabel="1" placeholder="Write here any other information related to this vehicle"/>
+                                <field name='description' nolabel='1' placeholder='Write here any other information related to this vehicle'/>
                             </page>
                         </notebook>
                     </group>
@@ -79,4 +80,17 @@
         </field>
     </record>
 
+    <record id='showroom_vehicle_view_search' model='ir.ui.view'>
+      <field name='name'>showroom.vehicle.search</field>
+      <field name='model'>showroom.vehicle</field>
+      <field name='arch' type='xml'>
+        <search string='showroom vehicle model search'>
+            <field name='company_id'/>
+            <field name='category_id'/>
+            <field name='model_id'/>
+            <field name='tag_ids'/>
+            <field name='model_year'/>
+        </search>
+      </field>
+    </record>
 </odoo>

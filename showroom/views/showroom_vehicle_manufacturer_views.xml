@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<odoo>    
+    <record id='showroom_vehicle_manufacturer_action' model='ir.actions.act_window'>
+        <field name='name'>Manufacturers</field>
+        <field name='res_model'>showroom.vehicle.manufacturer</field>
+        <field name='view_mode'>tree,form</field>
+         <field name='help' type='html'>
+          <p class='o_view_nocontent_smiling_face'>
+            Create your Vehicle Manufacturer
+          </p>
+        </field>
+    </record>
+
+    <record id='showroom_vehicle_manufacturer_view_tree' model='ir.ui.view'>
+        <field name='name'>showroom.vehicle.manufacturer.form</field>
+        <field name='model'>showroom.vehicle.manufacturer</field>
+        <field name='arch' type='xml'>
+            <form string='showroom vehicle manufacturer form'>
+                <sheet>
+                    <group>
+                        <field name='image' class='oe_avatar' widget='image'/>
+                        <group col='3'>
+                            <h1><field name='name' nolabel='1' style="min-width: 200px;"/></h1>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

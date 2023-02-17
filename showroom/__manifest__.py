@@ -7,8 +7,11 @@
     'data': [
         'security/ir.model.access.csv',
         'views/showroom_vehicle_views.xml',
+        'views/showroom_vehicle_manufacturer_views.xml',
         'views/showroom_vehicle_model_views.xml',
-        'views/showroom_vehicle_type_views.xml',
+        'views/showroom_vehicle_category_views.xml',
+        'views/showroom_vehicle_tag_views.xml',
+        'views/showroom_showroom_views.xml',
         'views/showroom_menus.xml',
     ]
 }

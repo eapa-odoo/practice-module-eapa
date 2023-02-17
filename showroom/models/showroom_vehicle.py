@@ -3,23 +3,24 @@ from odoo import fields, models
 class ShowroomVehicle(models.Model):
     _name = 'showroom.vehicle'
     _description = 'showroom vehicle'
-    _rec_name = 'veh_company'
+    _rec_name = 'company_id'
 
-    veh_company = fields.Char(required=True, string='Company')
-    veh_description = fields.Char(string='Description')
-    veh_cost = fields.Integer(string='Cost')
-    veh_model_id = fields.Many2one('showroom.vehicle.model',required=True, string='Model')
-    veh_type_id = fields.Many2one('showroom.vehicle.type',required=True)
-    veh_image = fields.Image()
+    company_id = fields.Many2one('showroom.vehicle.manufacturer', string='Company')
+    description = fields.Char(string='Description')
+    cost = fields.Integer(string='Cost')
+    image = fields.Image()
+    
+    model_id = fields.Many2one('showroom.vehicle.model', string='Model')
+    category_id = fields.Many2one('showroom.vehicle.category',)
 
-    veh_model_year = fields.Integer()
-    veh_transmission = fields.Selection(
+    model_year = fields.Integer()
+    transmission = fields.Selection(
         selection=[('M','Manual'),('A','Automatic')]
     )
 
-    veh_horsepower = fields.Integer()
-    veh_power = fields.Integer()
-    veh_fuel_type = fields.Selection(
+    horsepower = fields.Integer()
+    power = fields.Integer()
+    fuel_type = fields.Selection(
         selection=[('diesel','Diesel'),
                    ('gasoline','Gasoline'),
                    ('full hybrid','Full Hybrid'),
@@ -29,5 +30,7 @@ class ShowroomVehicle(models.Model):
                    ('lpg','LPG'),
                    ('electric','Electric')]
     )
-    veh_emissions = fields.Float()
+    emissions = fields.Float()
+
+    tag_ids = fields.Many2many('showroom.vehicle.tag', string='Tags')
 
