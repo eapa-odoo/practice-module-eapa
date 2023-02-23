@@ -1,13 +1,24 @@
 <?xml version='1.0'?>
 <odoo>    
-    <record id='showroom_vehicle_tag_action' model='ir.actions.act_window'>
-        <field name='name'>Vehicle Tags</field>
-        <field name='res_model'>showroom.vehicle.tag</field>
-        <field name='view_mode'>tree,form</field>
-         <field name='help' type='html'>
-          <p class='o_view_nocontent_smiling_face'>
-            Create your Vehicle Tags
-          </p>
+  <record id='showroom_vehicle_tag_action' model='ir.actions.act_window'>
+    <field name='name'>Vehicle Tags</field>
+    <field name='res_model'>showroom.vehicle.tag</field>
+    <field name='view_mode'>tree,form</field>
+    <field name='help' type='html'>
+    <p class='o_view_nocontent_smiling_face'>
+      Create your Vehicle Tags
+    </p>
+  </field>
+  </record>
+
+  <record id='showroom_vehicle_tag_tree' model='ir.ui.view'>
+        <field name='name'>showroom.vehicle.tag.tree</field>
+        <field name='model'>showroom.vehicle.tag</field>
+        <field name='arch' type='xml'>
+            <tree string='Showroom Vehicle Tag Tree' editable='bottom'>
+                <field name='name'/>
+                <field name='color' widget='color_picker'/>
+            </tree>
         </field>
     </record>
 </odoo>

@@ -17,10 +17,10 @@
         <field name='arch' type='xml'>
             <tree string='showroom vehicle tree'>
                 <field name='company_id'/>
+                <field name='tag_ids' widget='many2many_tags' options='{"color_field": "color"}'/>
                 <field name='model_id'/>
                 <field name='category_id'/>
-                <field name='tag_ids'/>
-                <field name='cost'/>
+                <field name='price'/>
             </tree>
         </field>
     </record>
@@ -35,7 +35,7 @@
                     <div class='oe_title' style='margin-left:15px'>
                         <label for='company_id'/>
                         <h1>
-                            <field name='company_id' placeholder='e.g. BMW'/>
+                            <field name='company_id' placeholder='e.g. BMW' options='{"no_create": True}'/>
                         </h1>
                         <br/>
                     </div>
@@ -45,8 +45,8 @@
                             <field name='category_id' string='Category'/>
                         </group>
                         <group>
-                            <field name='cost'/>
-                            <field name='tag_ids' widget='many2many_tags' placeholder='tags'/>
+                            <field name='price'/>
+                            <field name='tag_ids' widget='many2many_tags' options='{"color_field": "color"}' placeholder='tags'/>
                         </group>
                         <div><br/></div>
                         <notebook>
@@ -89,6 +89,7 @@
             <field name='category_id'/>
             <field name='model_id'/>
             <field name='tag_ids'/>
+            <field name='price' filter_domain='[("price", ">=", self)]'/>
             <field name='model_year'/>
         </search>
       </field>

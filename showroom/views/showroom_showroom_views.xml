@@ -1,13 +1,66 @@
 <?xml version='1.0'?>
 <odoo>    
-    <record id='showroom_showroom_action' model='ir.actions.act_window'>
-        <field name='name'>Showroom</field>
-        <field name='res_model'>showroom.showroom</field>
-        <field name='view_mode'>tree,form</field>
-         <field name='help' type='html'>
-          <p class='o_view_nocontent_smiling_face'>
-            Create your Showroom
-          </p>
+  <record id='showroom_showroom_action' model='ir.actions.act_window'>
+    <field name='name'>Showroom</field>
+    <field name='res_model'>showroom.showroom</field>
+    <field name='view_mode'>tree,form</field>
+      <field name='help' type='html'>
+      <p class='o_view_nocontent_smiling_face'>
+        Create your first Showroom
+      </p>
+    </field>
+  </record>
+
+  <record id='showroom_showroom_view_from' model='ir.ui.view'>
+        <field name='name'>showroom.showroom.form</field>
+        <field name='model'>showroom.showroom</field>
+        <field name='arch' type='xml'>
+            <form string='showroom showroom form'>
+                <sheet> 
+                  <div class='oe_title w-50'>
+                    <label for='name'/>
+                    <h1>
+                      <field name='name' placeholder='e.g. Mercedes'/>
+                    </h1>
+                    <br/>
+                  </div>
+                  <group>
+                    <group>
+                      <field name='types' string='Dealer Type'/>
+                      <field name='contact_no' string='Contact No'/>
+                      <div><br/></div>
+                    </group>
+                    <notebook>
+                      <page string='Info'>
+                        <group>
+                          <group string='Location'>
+                            <field name='address'/>
+                            <field name='city'/>
+                            <field name='email'/>
+                            <field name='contact_no'/>
+                          </group>
+                          <group string='Showroom'>
+                            <field name='display_capacity'/>
+                            <field name='warehouse_capacity'/>
+                          </group>
+                        </group>
+                      </page>
+                      <page string='Vehicles'>
+                        <field name='vehicle_ids'>
+                          <tree editable='bottom'>
+                            <field name='company_id'/>
+                            <field name='model_id'/>
+                            <field name='quantity'/>
+                          </tree>
+                        </field>
+                      </page>
+                      <page string='Note'>
+                        <field name='description' nolabel='1' placeholder='Write here any other information related to this showroom'/>
+                      </page>
+                    </notebook>
+                  </group>
+                </sheet>
+            </form>
         </field>
     </record>
 </odoo>

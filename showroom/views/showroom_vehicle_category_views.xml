@@ -10,4 +10,15 @@
           </p>
         </field>
     </record>
+
+    <record id='showroom_vehicle_category_view_tree' model='ir.ui.view'>
+        <field name='name'>showroom.vehicle.category.tree</field>
+        <field name='model'>showroom.vehicle.category</field>
+        <field name='arch' type='xml'>
+            <tree string='showroom vehicle category tree' editable='bottom'>
+                 <field name='sequence' widget='handle'/>
+                <field name='name'/>
+            </tree>
+        </field>
+    </record>
 </odoo>

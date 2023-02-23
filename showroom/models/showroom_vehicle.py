@@ -7,8 +7,11 @@ class ShowroomVehicle(models.Model):
 
     company_id = fields.Many2one('showroom.vehicle.manufacturer', string='Company')
     description = fields.Char(string='Description')
-    cost = fields.Integer(string='Cost')
+    price = fields.Integer(string='Price')
     image = fields.Image()
+
+    vehicle_id = fields.Many2one('showroom.showroom')
+    quantity = fields.Integer()
     
     model_id = fields.Many2one('showroom.vehicle.model', string='Model')
     category_id = fields.Many2one('showroom.vehicle.category',)
@@ -34,3 +37,6 @@ class ShowroomVehicle(models.Model):
 
     tag_ids = fields.Many2many('showroom.vehicle.tag', string='Tags')
 
+    _sql_constraints = [
+        ('check_price','CHECK(price >= 0)','The price cannot be negative.'),
+    ]

@@ -5,3 +5,4 @@ class ShowroomVehicleTag(models.Model):
     _description = 'showroom vehicle tag'
 
     name = fields.Char(required=True)
+    color = fields.Integer()

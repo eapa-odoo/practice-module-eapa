@@ -5,3 +5,4 @@ class ShowroomVehicleCategory(models.Model):
     _description = 'showroom vehicle category'
 
     name = fields.Char(required=True)
+    sequence = fields.Integer()
