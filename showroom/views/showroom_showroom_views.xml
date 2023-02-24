@@ -4,7 +4,7 @@
     <field name='name'>Showroom</field>
     <field name='res_model'>showroom.showroom</field>
     <field name='view_mode'>tree,form</field>
-      <field name='help' type='html'>
+    <field name='help' type='html'>
       <p class='o_view_nocontent_smiling_face'>
         Create your first Showroom
       </p>
@@ -16,6 +16,12 @@
         <field name='model'>showroom.showroom</field>
         <field name='arch' type='xml'>
             <form string='showroom showroom form'>
+                <header>
+                    <!-- <button name='action_button_sold' states='new,offer received' string='Sold' type='object'/>
+                    <button name='action_button_sold' states='offer accepted' string='Sold' type='object' class='oe_highlight'/>
+                    <button name='action_button_cancel' states='new,offer received,offer accepted' string='Cancel' type='object'/> -->
+                    <field name='state' widget='statusbar' options='{"clickable": "1"}'/>
+                </header>
                 <sheet> 
                   <div class='oe_title w-50'>
                     <label for='name'/>
@@ -27,7 +33,6 @@
                   <group>
                     <group>
                       <field name='types' string='Dealer Type'/>
-                      <field name='contact_no' string='Contact No'/>
                       <div><br/></div>
                     </group>
                     <notebook>
@@ -48,9 +53,8 @@
                       <page string='Vehicles'>
                         <field name='vehicle_ids'>
                           <tree editable='bottom'>
-                            <field name='company_id'/>
-                            <field name='model_id'/>
-                            <field name='quantity'/>
+                            <field name='company_id' options='{"no_create": True}'/>
+                            <field name='model_id' options='{"no_create": True}'/>
                           </tree>
                         </field>
                       </page>

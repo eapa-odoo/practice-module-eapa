@@ -19,7 +19,7 @@
             <tree string='showroom vehicle model tree'>
                 <field name='manufacturer_id'/>
                 <field name='name'/>
-                <field name='category_id' string='Vehicle Category'/>
+                <field name='category_id'/>
             </tree>
         </field>
     </record>
@@ -30,20 +30,49 @@
         <field name='arch' type='xml'>
           <form string='showroom vehicle model form'>
               <sheet>
-                    <div class='oe_title'>
-                        <label for='name'/>
-                        <h1>
+                  <field name='image' class='oe_avatar' widget='image'/>
+                  <div class='oe_title' style='margin-left: 15px'>
+                      <label for='name'/>
+                      <h1>
                           <field name='name' placeholder='e.g. Model S'/>
-                        </h1>
-                        <br/>
-                    </div>
+                      </h1>
+                      <br/>
+                  </div>
                     <group>
-                      <group>
-                        <label for='manufacturer_id'/>
-                        <field name='manufacturer_id' nolabel='1'/>
-                        <field name='category_id'/>
-                      </group>
-                    </group>  
+                        <group>
+                            <field name='manufacturer_id'/>
+                            <field name='category_id' string='Category'/>
+                        </group>
+                        <div><br/></div>
+                        <notebook>
+                            <page string='Information'>
+                                <group>
+                                    <group string='model'>
+                                        <field name='seat_no'/>
+                                        <field name='door_no'/>
+                                        <field name='model_year'/>
+                                        <field name='trailer_hitch'/>
+                                    </group>
+                                    <group string='engine'>
+                                        <field name='transmission'/>
+                                        <field name='horsepower' string='Horsepower'/>
+                                        <label for='power'/>
+                                        <div class='o_row'>
+                                            <field name='power' string='Power'/><span>kW</span>
+                                        </div>
+                                        <field name='fuel_type' string='Fuel Type'/>
+                                        <label for='emissions'/>
+                                        <div class='o_row'>
+                                            <field name='emissions' string='CO2 Emissions'/><span>g/km</span>
+                                        </div>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string='Description'>
+                                <field name='description' nolabel='1' placeholder='Write information related to this model'/>
+                            </page>
+                        </notebook>
+                    </group>
               </sheet>
           </form>
         </field>

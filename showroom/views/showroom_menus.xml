@@ -6,10 +6,12 @@
         </menuitem>
         <menuitem id='showroom_second_level_menu' name='Vehicle'>
             <menuitem id='showroom_vehicle_menu_action' action='showroom_vehicle_action'/>
+            <menuitem id='showroom_vehicle_tag_menu_action' action='showroom_vehicle_tag_action'/>
+        </menuitem>
+        <menuitem id='showroom_third_level_menu' name='Manufacturer'>
             <menuitem id='showroom_vehicle_manufacturer_menu_action' action='showroom_vehicle_manufacturer_action'/>
             <menuitem id='showroom_vehicle_model_menu_action' action='showroom_vehicle_model_action'/>
             <menuitem id='showroom_vehicle_category_menu_action' action='showroom_vehicle_category_action'/>
-            <menuitem id='showroom_vehicle_tag_menu_action' action='showroom_vehicle_tag_action'/>
         </menuitem>
     </menuitem> 
 </odoo>
