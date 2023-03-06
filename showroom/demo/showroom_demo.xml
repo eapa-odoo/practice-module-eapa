@@ -1,0 +1,174 @@
+<?xml version='1.0'?>
+<odoo>
+    <record id='manufacturer_one' model='showroom.vehicle.manufacturer'>
+        <field name='name'>Audi</field>
+    </record>
+
+    <record id='manufacturer_two' model='showroom.vehicle.manufacturer'>
+        <field name='name'>BMW</field>
+    </record>
+
+    <record id='manufacturer_three' model='showroom.vehicle.manufacturer'>
+        <field name='name'>Mercedes</field>
+    </record>
+
+    <record id='manufacturer_four' model='showroom.vehicle.manufacturer'>
+        <field name='name'>Tesla</field>
+    </record>
+
+    <record id='tag_one' model='showroom.vehicle.tag'>
+        <field name='name'>Luxury</field>
+        <field name='color'>11</field>
+    </record>
+
+    <record id='tag_two' model='showroom.vehicle.tag'>
+        <field name='name'>Off Road</field>
+        <field name='color'>3</field>
+    </record>
+
+    <record id='tag_three' model='showroom.vehicle.tag'>
+        <field name='name'>Attractive</field>
+        <field name='color'>10</field>
+    </record>
+
+    <record id='category_one' model='showroom.vehicle.category'>
+        <field name='name'>SUV</field>
+    </record>
+
+    <record id='category_two' model='showroom.vehicle.category'>
+        <field name='name'>Sedan</field>
+    </record>
+
+    <record id='category_three' model='showroom.vehicle.category'>
+        <field name='name'>Compact</field>
+    </record>
+
+    <record id='category_four' model='showroom.vehicle.category'>
+        <field name='name'>Coupe</field>
+    </record>
+
+    <record id='model_one' model='showroom.vehicle.model'>
+        <field name='name'>A1</field>
+        <field name='manufacturer_id' ref='manufacturer_one'/>
+        <field name='category_id' ref='category_three'/>
+        <field name='seat_no'>4 seats</field>
+        <field name='door_no'>4</field>
+        <field name='model_year'>2016</field>
+        <field name='trailer_hitch' eval='False'/>
+        <field name='transmission'>M</field>
+        <field name='horsepower'>250</field>
+        <field name='power'>2400</field>
+        <field name='fuel_type'>petrol</field>
+        <field name='emissions'>1.56</field>
+    </record>
+
+    <record id='model_two' model='showroom.vehicle.model'>
+        <field name='name'>X7</field>
+        <field name='manufacturer_id' ref='manufacturer_two'/>
+        <field name='category_id' ref='category_one'/>
+        <field name='seat_no'>7 seats</field>
+        <field name='door_no'>4</field>
+        <field name='model_year'>2023</field>
+        <field name='trailer_hitch' eval='True'/>
+        <field name='transmission'>A</field>
+        <field name='horsepower'>400</field>
+        <field name='power'>3000</field>
+        <field name='fuel_type'>diesel</field>
+        <field name='emissions'>1.38</field>
+    </record>
+
+    <record id='model_three' model='showroom.vehicle.model'>
+        <field name='name'>5 Series</field>
+        <field name='manufacturer_id' ref='manufacturer_two'/>
+        <field name='category_id' ref='category_two'/>
+        <field name='seat_no'>4 seats</field>
+        <field name='door_no'>4</field>
+        <field name='model_year'>2022</field>
+        <field name='trailer_hitch' eval='False'/>
+        <field name='transmission'>A</field>
+        <field name='horsepower'>350</field>
+        <field name='power'>2600</field>
+        <field name='fuel_type'>plug-in hybrid diesel</field>
+        <field name='emissions'>1.23</field>
+    </record>
+
+    <record id='model_four' model='showroom.vehicle.model'>
+        <field name='name'>Model S</field>
+        <field name='manufacturer_id' ref='manufacturer_four'/>
+        <field name='category_id' ref='category_two'/>
+        <field name='seat_no'>5 seats</field>
+        <field name='door_no'>4</field>
+        <field name='model_year'>2019</field>
+        <field name='trailer_hitch' eval='False'/>
+        <field name='transmission'>A</field>
+        <field name='horsepower'>450</field>
+        <field name='power'>2900</field>
+        <field name='fuel_type'>electric</field>
+        <field name='emissions'>0</field>
+    </record>
+
+    <record id='model_five' model='showroom.vehicle.model'>
+        <field name='name'>G63</field>
+        <field name='manufacturer_id' ref='manufacturer_three'/>
+        <field name='category_id' ref='category_one'/>
+        <field name='seat_no'>5 seats</field>
+        <field name='door_no'>4</field>
+        <field name='model_year'>2023</field>
+        <field name='trailer_hitch' eval='True'/>
+        <field name='transmission'>A</field>
+        <field name='horsepower'>800</field>
+        <field name='power'>3200</field>
+        <field name='fuel_type'>diesel</field>
+        <field name='emissions'>2.10</field>
+    </record>
+
+    <record id='model_six' model='showroom.vehicle.model'>
+        <field name='name'>S class</field>
+        <field name='manufacturer_id' ref='manufacturer_three'/>
+        <field name='category_id' ref='category_two'/>
+        <field name='seat_no'>4 seats</field>
+        <field name='door_no'>4</field>
+        <field name='model_year'>2023</field>
+        <field name='trailer_hitch' eval='False'/>
+        <field name='transmission'>A</field>
+        <field name='horsepower'>400</field>
+        <field name='power'>2600</field>
+        <field name='fuel_type'>petrol</field>
+        <field name='emissions'>1.17</field>
+    </record>
+
+    <record id='vehicle_one' model='showroom.vehicle'>
+        <field name='company_id' ref='manufacturer_one'/>
+        <field name='model_id' ref='model_one'/>
+        <field name='price'>3500000</field>
+        <field name='tag_ids' eval='[(6, 0, [3])]'/>
+    </record>
+
+    <record id='vehicle_two' model='showroom.vehicle'>
+        <field name='company_id' ref='manufacturer_two'/>
+        <field name='model_id' ref='model_two'/>
+        <field name='price'>15000000</field>
+        <field name='tag_ids' eval='[(6, 0, [1,2,3])]'/>
+    </record>
+
+    <record id='vehicle_three' model='showroom.vehicle'>
+        <field name='company_id' ref='manufacturer_four'/>
+        <field name='model_id' ref='model_four'/>
+        <field name='price'>23000000</field>
+        <field name='tag_ids' eval='[(6, 0, [1,3])]'/>
+    </record>
+
+    <record id='vehicle_four' model='showroom.vehicle'>
+        <field name='company_id' ref='manufacturer_three'/>
+        <field name='model_id' ref='model_five'/>
+        <field name='price'>26000000</field>
+        <field name='tag_ids' eval='[(6, 0, [1,2,3])]'/>
+    </record>
+
+    <record id='vehicle_five' model='showroom.vehicle'>
+        <field name='company_id' ref='manufacturer_three'/>
+        <field name='model_id' ref='model_six'/>
+        <field name='price'>34000000</field>
+        <field name='tag_ids' eval='[(6, 0, [1])]'/>
+    </record>
+</odoo>

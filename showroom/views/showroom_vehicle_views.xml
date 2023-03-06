@@ -83,7 +83,7 @@
         </field>
     </record>
 
-    <!-- <record id='showroom_vehicle_view_search' model='ir.ui.view'>
+    <record id='showroom_vehicle_view_search' model='ir.ui.view'>
       <field name='name'>showroom.vehicle.search</field>
       <field name='model'>showroom.vehicle</field>
       <field name='arch' type='xml'>
@@ -95,5 +95,5 @@
             <field name='model_year'/>
         </search>
       </field>
-    </record> -->
+    </record>
 </odoo>

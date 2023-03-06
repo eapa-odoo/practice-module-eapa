@@ -1,10 +1,11 @@
-from odoo import models,fields
+from odoo import api,models,fields
 
 class ShowroomShowroom(models.Model):
     _name = 'showroom.showroom'
     _description = 'showroom'
+    _inherit = 'showroom.vehicle'
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     description = fields.Char()
     types = fields.Selection(
         string = 'Types', 
@@ -23,7 +24,7 @@ class ShowroomShowroom(models.Model):
     city = fields.Char()
     email = fields.Char()
     contact_no = fields.Char()
-    display_capacity = fields.Integer()
+    display_capacity = fields.Integer() 
     warehouse_capacity = fields.Integer()
 
-    vehicle_ids = fields.One2many('showroom.vehicle','vehicle_id')
+    vehicle_ids = fields.Many2many('showroom.vehicle')

@@ -22,7 +22,7 @@ class ShowroomVehicleModel(models.Model):
     power = fields.Integer()
     fuel_type = fields.Selection(
         selection=[('diesel','Diesel'),
-                   ('gasoline','Gasoline'),
+                   ('petrol','Petrol'),
                    ('full hybrid','Full Hybrid'),
                    ('plug-in hybrid diesel','Plug-in Hybrid Diesel'),
                    ('plug-in hybrid gasoline','Plug-in Hybrid Gasoline'),
